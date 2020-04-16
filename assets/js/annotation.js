@@ -7,18 +7,6 @@ var annotations = {};
 var values = {};
 var key;
 
-var stringArrayToArray = function(stringArray) {
-    const array = stringArray
-    .replace(/^\[|\]$/g, '') // Remove leading and ending square brackets ([]).
-    .split(',') // Split by comma.
-    .map((phrase) => // Iterate over each phrase.
-      phrase.trim() // Remove leading and ending whitespace.
-      .replace(/"/g, '') // Remove all double quotes (").
-      .replace(/^\'|\'$/g, '') // Remove leading and ending single quotes (').
-    )
-    return array
-}
-
 // ---------------------------------------------------------
 // Create jQuery elements
 // ---------------------------------------------------------
@@ -34,8 +22,8 @@ var instructionTable = $('div#instruction-table');
 var form = $("div#form");
 var questions = $('div#questions');
 
-var rawList = stringArrayToArray(raw.text());
-var questionList = stringArrayToArray(questions.text());
+var rawList = Array.from(raw.text());
+var questionList = Array.from(questions.text());
 var curRaw = rawList[0];
 var curQuestion = questionList[0];
 
