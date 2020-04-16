@@ -31,11 +31,11 @@
 }
 
 .ann {
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .disp {
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .ann > span.token {
@@ -52,6 +52,17 @@
 
 .annotation {
     font-weight: normal;
+    background-color: #EAD379;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.overlap {
+    font-weight: normal;
+    background-color: #90EE90;
+}
+
+.annotation > .overlap {
     background-color: #EAD379;
 }
 

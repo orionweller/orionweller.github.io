@@ -12,6 +12,8 @@ var key;
 // ---------------------------------------------------------
 
 var raw = $('#raw');
+var spans = $('#spans');
+var qspans = $('#overlaps');
 var well = $('#well');
 var submit = $('#submit');
 var choice = $('#choice');
@@ -19,9 +21,10 @@ var keyname = $('#key-name');
 var instructionTable = $('#instruction-table');
 
 var form = $("#form");
+var qOverlap = [];
 var answer = {};
 var tagHidden = {};
-var noVal = {};
+var skip = {}
 var radios = {};
 // answerHiddenDuplicates value of answer but is needed because
 // otherwise the data is not sent
@@ -51,6 +54,7 @@ var makeChoice = function(key) {
         .text(fieldName[key])
         .append(input)
         .attr({'title': "Shortcut: " +  shortcutKey[key]})
+        .attr('hidden')
     );
     return label;
 }
@@ -75,17 +79,18 @@ var makeTagHidden = function(key) {
 
 
 var  makeFormRow = function(key) {
-    var checkbox = ($(
+    var skipCheckbox = ($(
         '<input>')
-        .attr({'type': 'checkbox', 'id': "no-" + key})
+        .attr({'type': 'checkbox', 'id': "skip-" + key})
         .addClass('form-check-input')
         .change(function() { show(); })
     );
-    var label = ($(
+
+    var skipLabel = ($(
         '<label>')
-        .attr({'for': "no-" + key})
+        .attr({'for': "skip-" + key})
         .addClass('form-check-label')
-        .text(' There is no ' + shortName[key])
+        .text('Question has no answer')
     );
 
     var input = ($(
@@ -101,25 +106,25 @@ var  makeFormRow = function(key) {
             .attr({'for': key})
             .text(fieldName[key])
         )
-        .append($('<div>')
+	.append($('<div>')
             .addClass('form-row')
             .append($('<div>')
                 .addClass('col-sm-8')
                 .append(input)
             )
-            .append($('<div>')
-                .addClass('col-sm-4')
+	    .append($('<div>')
+	        .addClass('col-sm-4')
                 .append($('<div>')
                     .addClass('form-check')
-                    .append(checkbox)
-                    .append(' ')
-                    .append(label)
-                )
+                    .append(skipCheckbox)
+	            .append(' ')
+		    .append(skipLabel)
+	        )
             )
         )
     );
     answer[key] = input;
-    noVal[key] = checkbox;
+    skip[key] = skipCheckbox;
     return div;
 }
 
@@ -182,10 +187,15 @@ var clear_selection = function() {
 };
 
 var get_value = function() {
-    var values = _.map(annotations[key], function(annotation) {
-        return tokens.slice(annotation[0], annotation[1]).join(" ");
-    });
-    return values.join(" ");
+    if (skip[key].is(":checked")){
+	return "NONE";
+    }else{
+	var values = _.map(annotations[key], function(annotation) {
+            return tokens.slice(annotation[0], annotation[1]).join(" ");
+	});
+	values = Array.from(new Set(values));
+	return values.join(" | ");
+    }
 };
 
 var remove_all_annotations = function() {
@@ -217,11 +227,23 @@ var toggle_old_new = function() {
 // Displaying
 // ---------------------------------------------------------
 
-var sequence_html = function(sequence, annotations) {
+var sequence_html = function(sequence, annotations, overlaps) {
     var ret = _.map(sequence, function(token, index) {
+	if (token == '[PAR]' || token == '[DOC]'){
+	    token = '<br><br>'
+	};
+	if (token == '[TLE]'){
+	    token = ' '
+	};
         return '<span class="token" id=tok_' + index + '> '
             + token + ' </span>';
     });
+    console.log(overlaps);
+    _.each(overlaps, function(overlap) {
+        ret[overlap[0]] = '<strong class="overlap">'
+            + ret[overlap[0]];
+        ret[overlap[1]-1] = ret[overlap[1]-1] + '</strong>';
+    });    
     _.each(annotations, function(annotation) {
         ret[annotation[0]] = '<strong class="annotation">'
             + ret[annotation[0]];
@@ -232,10 +254,9 @@ var sequence_html = function(sequence, annotations) {
 }
 
 
-
 var canSubmit = function() {
     for (var key of keys) {
-        if (values[key] == "" && !noVal[key].is(":checked")) { return false; }
+        if (values[key] == "" && !skip[key].is(":checked")) { return false; }
     }
     return true;
 }
@@ -245,14 +266,12 @@ var show = function() {
         return a[0] - b[0];
     });
     //fill_annotated_values(datum);
-    seq_html = sequence_html(tokens, annotations[key]);
+    seq_html = sequence_html(tokens, annotations[key], qOverlap);
     well.html(seq_html);
     values[key] = get_value();
     answer[key].val(values[key]);
     answerHidden[key].val(values[key]);
     tagHidden[key].val(annotations[key]);
-    console.log(key);
-    console.log(annotations[key]);
     keyname.html(shortName[key]);
 
 
@@ -309,6 +328,7 @@ inputs.change(function(){
     }
 });
 
+// If I wanted the instruction body, which is currently deleted
 // Instructions expand/collapse
 var content = $('#instructionBody');
 var trigger = $('#collapseTrigger');
@@ -324,13 +344,30 @@ trigger.click(function(){
     }
 });
 
+
 // ---------------------------------------------------------
 // Initialize
 // ---------------------------------------------------------
 
 
+var spansStrToAns =  function(spansStrToAns) {
+    var annList = _.map(spansStrToAns.split(","), function(el) {return parseInt(el)});
+    var i = 2, list = _.groupBy(annList, function(a, b){
+        return Math.floor(b/i);
+    });
+    return _.toArray(list);
+}
+
 key = keys[0];
 radios[key].click();
-var tokens = raw.text().split(">>");
+var tokens = raw.text().split(' ');
 raw.hide();
+spans.hide();
+qspans.hide();
+if(spans.text().length > 0){
+    annotations['answer'] = spansStrToAns(spans.text());
+}
+qOverlap = spansStrToAns(qspans.text());
+console.log(qOverlap);
+console.log(annotations);
 show();
