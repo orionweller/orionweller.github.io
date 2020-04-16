@@ -7,10 +7,22 @@ var annotations = {};
 var values = {};
 var key;
 
+var stringArrayToArray = function(stringArray) {
+    const array = stringArray
+    .replace(/^\[|\]$/g, '') // Remove leading and ending square brackets ([]).
+    .split(',') // Split by comma.
+    .map((phrase) => // Iterate over each phrase.
+      phrase.trim() // Remove leading and ending whitespace.
+      .replace(/"/g, '') // Remove all double quotes (").
+      .replace(/^\'|\'$/g, '') // Remove leading and ending single quotes (').
+    )
+    return array
+}
+
 // ---------------------------------------------------------
 // Create jQuery elements
 // ---------------------------------------------------------
-
+var currentIndex = 0;
 var raw = $('div#raw');
 var spans = $('div#spans');
 var qspans = $('div#overlaps');
@@ -19,8 +31,24 @@ var submit = $('input#submit');
 var choice = $('div#choice');
 var keyname = $('div#key-name');
 var instructionTable = $('div#instruction-table');
-
 var form = $("div#form");
+var questions = $('div#questions');
+
+var rawList = stringArrayToArray(raw.text());
+var questionList = stringArrayToArray(questions.text());
+var curRaw = rawList[0];
+var curQuestion = questionList[0];
+
+var questionSub = $('#question-sub')
+var qspans = $('#overlaps');
+var well = $('#well');
+var submitButton = $('#submit');
+var choice = $('#choice');
+var keyname = $('#key-name');
+var instructionTable = $('#instruction-table');
+var finalAnswer = $('input#all_answers');
+
+var form = $("#form");
 var qOverlap = [];
 var answer = {};
 var tagHidden = {};
@@ -29,6 +57,7 @@ var radios = {};
 // answerHiddenDuplicates value of answer but is needed because
 // otherwise the data is not sent
 var answerHidden = {};
+var finalAnswerList = [];
 
 var makeInstruction = function(key) {
     return ($(
@@ -186,7 +215,8 @@ var clear_selection = function() {
     }
 };
 
-var get_value = function() {
+var get_value = function(join_param) {
+    join_param = join_param || " | ";
     if (skip[key].is(":checked")){
 	return "NONE";
     }else{
@@ -194,7 +224,7 @@ var get_value = function() {
             return tokens.slice(annotation[0], annotation[1]).join(" ");
 	});
 	values = Array.from(new Set(values));
-	return values.join(" | ");
+	return values.join(join_param);
     }
 };
 
@@ -284,13 +314,13 @@ var show = function() {
     });
 
     if (canSubmit()) {
-        submit.removeAttr("disabled");
-        submit.removeClass("btn-default");
-        submit.addClass("btn-success");
+        submitButton.removeAttr("disabled");
+        submitButton.removeClass("btn-default");
+        submitButton.addClass("btn-success");
     } else {
-        submit.attr("disabled", "disabled");
-        submit.removeClass("btn-success");
-        submit.addClass("btn-default");
+        submitButton.attr("disabled", "disabled");
+        submitButton.removeClass("btn-success");
+        submitButton.addClass("btn-default");
     }
 };
 
@@ -344,32 +374,61 @@ trigger.click(function(){
     }
 });
 
+// every submit button should take us here
+var nextTask = function() {
+    if (canSubmit()) {
+        finalAnswerList.push(get_value(","))
+        console.log("Added answer to set")
+        console.log(finalAnswerList)
+        if (currentIndex !== rawList.length) {
+            currentIndex = currentIndex + 1;
+            curRaw = rawList[currentIndex];
+            curQuestion =  questionList[currentIndex];
+            initializeText();
+            return false;
+        } else {
+            finalAnswer.val(finalAnswerList.toString())
+            submitButton.unbind('submit');
+            console.log(finalAnswerList)
+            return true;
+        }
+    }
+}
+
 
 // ---------------------------------------------------------
 // Initialize
 // ---------------------------------------------------------
 
+var initializeText = function() {
+    tokens = curRaw.split(' ');
+    if(spans.text().length > 0){
+        annotations['answer'] = spansStrToAns(spans.text());
+    }
+    questionSub.val(curQuestion)
+    qOverlap = spansStrToAns(qspans.text());
+    console.log(qOverlap);
+    console.log(annotations);
+    show();
+}
 
 var spansStrToAns =  function(spansStrToAns) {
-    var annList = _.map(spansStrToAns.split(","), function(el) {return parseInt(el)});
-    var i = 2, list = _.groupBy(annList, function(a, b){
-        return Math.floor(b/i);
-    });
-    return _.toArray(list);
+    if (spansStrToAns !== "") {
+        var annList = _.map(spansStrToAns.split(","), function(el) {return parseInt(el)});
+        var i = 2, list = _.groupBy(annList, function(a, b){
+            return Math.floor(b/i);
+        });
+        return _.toArray(list);
+    } else {
+        return [];
+    }
 }
 
 key = keys[0];
 radios[key].click();
-console.log("Logging the text of `raw`");
-console.log(raw.text());
-var tokens = raw.text().split(' ');
 raw.hide();
+questions.hide();
 spans.hide();
 qspans.hide();
-if(spans.text().length > 0){
-    annotations['answer'] = spansStrToAns(spans.text());
-}
-qOverlap = spansStrToAns(qspans.text());
-console.log(qOverlap);
-console.log(annotations);
-show();
+var tokens;
+initializeText();
