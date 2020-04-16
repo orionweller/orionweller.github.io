@@ -22,8 +22,8 @@ var instructionTable = $('div#instruction-table');
 var form = $("div#form");
 var questions = $('div#questions');
 
-var rawList = Array.from(raw.text());
-var questionList = Array.from(questions.text());
+var rawList = JSON.parse(raw.text().replace(/'/g, '"'))
+var questionList = JSON.parse(questions.text().replace(/'/g, '"'))
 var curRaw = rawList[0];
 var curQuestion = questionList[0];
 
@@ -368,7 +368,6 @@ var nextTask = function() {
         finalAnswerList.push(get_value(","))
         console.log("Added answer to set")
         console.log(finalAnswerList)
-        annotations["answer"] = []
         if (currentIndex !== rawList.length) {
             currentIndex = currentIndex + 1;
             curRaw = rawList[currentIndex];
@@ -391,13 +390,12 @@ var nextTask = function() {
 
 var initializeText = function() {
     tokens = curRaw.split(' ');
+    annotations[key] = []
     if(spans.text().length > 0){
         annotations['answer'] = spansStrToAns(spans.text());
     }
     questionSub.val(curQuestion)
     qOverlap = spansStrToAns(qspans.text());
-    console.log(qOverlap);
-    console.log(annotations);
     show();
 }
 
