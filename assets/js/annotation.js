@@ -11,16 +11,16 @@ var key;
 // Create jQuery elements
 // ---------------------------------------------------------
 
-var raw = $('#raw');
-var spans = $('#spans');
-var qspans = $('#overlaps');
-var well = $('#well');
-var submit = $('#submit');
-var choice = $('#choice');
-var keyname = $('#key-name');
-var instructionTable = $('#instruction-table');
+var raw = $('div#raw');
+var spans = $('div#spans');
+var qspans = $('div#overlaps');
+var well = $('div#well');
+var submit = $('div#submit');
+var choice = $('div#choice');
+var keyname = $('div#key-name');
+var instructionTable = $('div#instruction-table');
 
-var form = $("#form");
+var form = $("div#form");
 var qOverlap = [];
 var answer = {};
 var tagHidden = {};
@@ -360,6 +360,8 @@ var spansStrToAns =  function(spansStrToAns) {
 
 key = keys[0];
 radios[key].click();
+console.log("Logging the text of `raw`");
+console.log(raw.text());
 var tokens = raw.text().split(' ');
 raw.hide();
 spans.hide();
