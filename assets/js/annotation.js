@@ -24,6 +24,7 @@ var questions = $('div#questions');
 
 var rawList = JSON.parse(raw.text().replace(/"/g, '').replace(/'/g, '"'))
 var questionList = JSON.parse(questions.text().replace(/"/g, '').replace(/'/g, '"'))
+var numQ = rawList.length
 var curRaw = rawList[0];
 var curQuestion = questionList[0];
 
@@ -35,8 +36,9 @@ var choice = $('#choice');
 var keyname = $('#key-name');
 var instructionTable = $('#instruction-table');
 var finalAnswer = $('input#all_answers');
-
+var qcomplete = $('h4#qcomplete')
 var form = $("#form");
+
 var qOverlap = [];
 var answer = {};
 var tagHidden = {};
@@ -46,6 +48,7 @@ var radios = {};
 // otherwise the data is not sent
 var answerHidden = {};
 var finalAnswerList = [];
+var currentlyChecked = false;
 
 var makeInstruction = function(key) {
     return ($(
@@ -173,26 +176,30 @@ var get_annotation_id = function(token_id, annotations) {
 };
 
 var mouse_down = function(id) {
-    var annotation_id = get_annotation_id(id, annotations[key]);
-    if (annotation_id > -1) {
-        delete_annotation(annotation_id);
-        show();
-    } else {
-        first_token = id;
+    if (!skip[key].is(":checked")) {
+        var annotation_id = get_annotation_id(id, annotations[key]);
+        if (annotation_id > -1) {
+            delete_annotation(annotation_id);
+            show();
+        } else {
+            first_token = id;
+        }
     }
 };
 
 var mouse_up = function(id) {
-    if (first_token > -1) {
-        if (first_token <= id) {
-            add_annotation([first_token, id + 1]);
-        } else {
-            add_annotation([id, first_token + 1]);
+    if (!skip[key].is(":checked")) {
+        if (first_token > -1) {
+            if (first_token <= id) {
+                add_annotation([first_token, id + 1]);
+            } else {
+                add_annotation([id, first_token + 1]);
+            }
+            first_token = -1;
+            show();
         }
-        first_token = -1;
-        show();
+        clear_selection();
     }
-    clear_selection();
 };
 
 var clear_selection = function() {
@@ -283,6 +290,17 @@ var show = function() {
     annotations[key].sort(function(a, b) {
         return a[0] - b[0];
     });
+    label = $('input#skip-answer').prop('checked')
+    if (label !== currentlyChecked) {
+        if (label) {
+            oldAnnotations = annotations[key]
+            annotations[key] = []
+            currentlyChecked = true;
+        } else {
+            annotations[key] = oldAnnotations
+            currentlyChecked = false;
+        }
+    }
     //fill_annotated_values(datum);
     seq_html = sequence_html(tokens, annotations[key], qOverlap);
     well.html(seq_html);
@@ -390,6 +408,7 @@ var nextTask = function() {
 
 var initializeText = function() {
     tokens = curRaw.split(' ');
+    qcomplete.text(currentIndex + "/" + numQ + " Complete")
     annotations[key] = []
     if(spans.text().length > 0){
         annotations['answer'] = spansStrToAns(spans.text());
