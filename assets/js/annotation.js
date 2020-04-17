@@ -409,7 +409,9 @@ var nextTask = function() {
 var initializeText = function() {
     tokens = curRaw.split(' ');
     qcomplete.text(currentIndex + "/" + numQ + " Complete")
+    // reset since it's a new question
     annotations[key] = []
+    $('input#skip-answer').prop('checked', false);
     if(spans.text().length > 0){
         annotations['answer'] = spansStrToAns(spans.text());
     }
