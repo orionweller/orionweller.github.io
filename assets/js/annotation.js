@@ -49,6 +49,7 @@ var radios = {};
 var answerHidden = {};
 var finalAnswerList = [];
 var currentlyChecked = false;
+var oldAnnotations = [];
 
 var makeInstruction = function(key) {
     return ($(
@@ -411,6 +412,7 @@ var initializeText = function() {
     qcomplete.text(currentIndex + "/" + numQ + " Complete")
     // reset since it's a new question
     annotations[key] = []
+    oldAnnotations = [] // reset if `NONE` was pressed
     $('input#skip-answer').prop('checked', false);
     if(spans.text().length > 0){
         annotations['answer'] = spansStrToAns(spans.text());
