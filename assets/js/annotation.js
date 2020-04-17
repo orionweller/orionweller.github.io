@@ -386,7 +386,7 @@ var nextTask = function() {
         finalAnswerList.push(get_value(","))
         console.log("Added answer to set")
         console.log(finalAnswerList)
-        if (currentIndex !== rawList.length) {
+        if (currentIndex !== (rawList.length - 1)) {
             currentIndex = currentIndex + 1;
             curRaw = rawList[currentIndex];
             curQuestion =  questionList[currentIndex];
