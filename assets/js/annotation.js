@@ -393,7 +393,7 @@ var nextTask = function() {
             initializeText();
             return false;
         } else {
-            finalAnswer.val(finalAnswerList.toString())
+            finalAnswer.val(JSON.stringify(finalAnswerList))
             submitButton.unbind('submit');
             console.log(finalAnswerList)
             return true;
