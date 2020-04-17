@@ -22,8 +22,8 @@ var instructionTable = $('div#instruction-table');
 var form = $("div#form");
 var questions = $('div#questions');
 
-var rawList = JSON.parse(raw.text().replace(/'/g, '"'))
-var questionList = JSON.parse(questions.text().replace(/'/g, '"'))
+var rawList = JSON.parse(raw.text().replace(/"/g, '').replace(/'/g, '"'))
+var questionList = JSON.parse(questions.text().replace(/"/g, '').replace(/'/g, '"'))
 var curRaw = rawList[0];
 var curQuestion = questionList[0];
 
