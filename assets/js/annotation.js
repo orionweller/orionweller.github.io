@@ -36,6 +36,8 @@ var choice = $('#choice');
 var keyname = $('#key-name');
 var instructionTable = $('#instruction-table');
 var finalAnswer = $('input#all_answers');
+var finalQuestions = $('input#all_questions');
+var finalContexts = $('input#all_contexts');
 var qcomplete = $('h4#qcomplete')
 var form = $("#form");
 
@@ -395,8 +397,8 @@ var nextTask = function() {
             return false;
         } else {
             finalAnswer.val(JSON.stringify(finalAnswerList))
-            // raw.val(JSON.stringify(rawList))
-            // questions.val(JSON.stringify(questionList))
+            finalContexts.val(JSON.stringify(rawList))
+            finalQuestions.val(JSON.stringify(questionList))
             submitButton.unbind('submit');
             console.log(finalAnswerList)
             return true;
