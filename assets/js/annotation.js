@@ -113,7 +113,7 @@ var  makeFormRow = function(key) {
         '<label>')
         .attr({'for': "skip-" + key})
         .addClass('form-check-label')
-        .text('Question has no answer')
+        .text('Question has no answerable (NA)')
     );
 
     var input = ($(
@@ -216,7 +216,7 @@ var clear_selection = function() {
 var get_value = function(join_param) {
     join_param = join_param || " | ";
     if (skip[key].is(":checked")){
-	return "NONE";
+	return "NA";
     }else{
 	var values = _.map(annotations[key], function(annotation) {
             return tokens.slice(annotation[0], annotation[1]).join(" ");
