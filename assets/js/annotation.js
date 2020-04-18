@@ -395,8 +395,8 @@ var nextTask = function() {
             return false;
         } else {
             finalAnswer.val(JSON.stringify(finalAnswerList))
-            raw.val(JSON.stringify(rawList))
-            questions.val(JSON.stringify(questionList))
+            // raw.val(JSON.stringify(rawList))
+            // questions.val(JSON.stringify(questionList))
             submitButton.unbind('submit');
             console.log(finalAnswerList)
             return true;
