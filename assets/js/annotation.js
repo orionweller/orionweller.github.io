@@ -113,7 +113,7 @@ var  makeFormRow = function(key) {
         '<label>')
         .attr({'for': "skip-" + key})
         .addClass('form-check-label')
-        .text('Question has no answerable (NA)')
+        .text('Question is not answerable (NA)')
     );
 
     var input = ($(
