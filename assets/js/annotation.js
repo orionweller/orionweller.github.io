@@ -351,6 +351,19 @@ $("#remove").click(function() {
     show();
 });
 
+$("#prevSubmitted").click(function() {
+    if (currentIndex) {
+        let prevAnswers = finalAnswerList[currentIndex - 1]
+        finalAnswerList.splice(currentIndex, 1);
+        finalAnswerList.splice(currentIndex - 1, 1);
+        console.log(finalAnswerList, "is the new final answer list")
+        currentIndex = currentIndex - 1;
+        curRaw = rawList[currentIndex];
+        curQuestion =  questionList[currentIndex];
+        initializeText();
+    }
+});
+
 //highlight selected category
 var inputs = $("#choice input:radio");
 inputs.change(function(){
