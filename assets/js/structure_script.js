@@ -173,7 +173,7 @@
                         var nameOfAttr = allKeys[0]
                         let placeholder = curAttr[nameOfAttr]
                         form.append(makeFormRow("Attribute: " + nameOfAttr, nameOfAttr.replace(/ /g,"_"), hint=placeholder));
-                        curKeys.push(nameOfAttr.replace(/ /g,"_"))
+                        curKeys.push("Attribute: " + nameOfAttr.replace(/ /g,"_"))
                         // form.append(makeTagHidden(key));
                         // form.append(makeAnswerHidden(key));
                         // choice.append(makeChoice(key));
