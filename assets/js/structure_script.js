@@ -107,7 +107,11 @@
                 }
 
 
-                var  makeFormRow = function(key, id, hint="") {
+                var  makeFormRow = function(key, id, hint="", isAttr=false) {
+                    var fillText = key;
+                    if (isAttr) {
+                        fillText = "Attribute: " + key;
+                    }
                     var skipCheckbox = ($(
                         '<input>')
                         .attr({'type': 'checkbox', 'id': "skip-" + id})
@@ -134,7 +138,7 @@
                         .addClass('col-xs-12 col-sm-12 content')
                         .append($('<label>')
                             .attr({'for': key, "id": "label-" + id})
-                            .text(key) // PUT TEXT HERE
+                            .text(fillText) // PUT TEXT HERE
                         )
                   .append($('<div>')
                             .addClass('form-row')
@@ -172,8 +176,8 @@
                         // only should be one left
                         var nameOfAttr = allKeys[0]
                         let placeholder = curAttr[nameOfAttr]
-                        form.append(makeFormRow("Attribute: " + nameOfAttr, nameOfAttr.replace(/ /g,"_"), hint=placeholder));
-                        curKeys.push("Attribute: " + nameOfAttr.replace(/ /g,"_"))
+                        form.append(makeFormRow(nameOfAttr, nameOfAttr.replace(/ /g,"_"), hint=placeholder));
+                        curKeys.push(nameOfAttr.replace(/ /g,"_"))
                         // form.append(makeTagHidden(key));
                         // form.append(makeAnswerHidden(key));
                         // choice.append(makeChoice(key));
