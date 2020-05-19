@@ -110,7 +110,7 @@
                 var makeFormRow = function(key, id, hint="", isAttr=false) {
                     var fillText = key;
                     if (isAttr) {
-                        fillText = "Attribute: " + key;
+                        fillText = "Attribute: '" + key + "'";
                     }
                     var skipCheckbox = ($(
                         '<input>')
