@@ -107,7 +107,7 @@
                 }
 
 
-                var  makeFormRow = function(key, id, hint="", isAttr=false) {
+                var makeFormRow = function(key, id, hint="", isAttr=false) {
                     var fillText = key;
                     if (isAttr) {
                         fillText = "Attribute: " + key;
@@ -176,7 +176,7 @@
                         // only should be one left
                         var nameOfAttr = allKeys[0]
                         let placeholder = curAttr[nameOfAttr]
-                        form.append(makeFormRow(nameOfAttr, nameOfAttr.replace(/ /g,"_"), hint=placeholder));
+                        form.append(makeFormRow(nameOfAttr, nameOfAttr.replace(/ /g,"_"), hint=placeholder, isAttr=true));
                         curKeys.push(nameOfAttr.replace(/ /g,"_"))
                         // form.append(makeTagHidden(key));
                         // form.append(makeAnswerHidden(key));
