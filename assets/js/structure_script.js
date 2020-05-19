@@ -605,7 +605,7 @@
                         allKeys.splice(indexOfValues, 1);
                         // only should be one left
                         var nameOfAttr = allKeys[0]
-                        let attrValues = attrDict[nameOfAttr].split(",");
+                        let attrValues = attrDict[nameOfAttr].split(",").map(v => v.toLowerCase());
                         if (enforceOptions) {
                             attrToHint[nameOfAttr.replace(/ /g, "_")] = attrValues;
                             let prevVal = $("label#label-" + nameOfAttr.replace(/ /g, "_")).text()
