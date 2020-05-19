@@ -167,7 +167,7 @@
                     var attrDict = Object.values(curStructure)[0];
                     var mainObj = Object.keys(curStructure)[0];
                     form.append(makeFormRow("Enter a single '" + mainObj + "' here:", mainObj.replace(/ /g,"_")));
-                    curKeys.push(mainObj)
+                    curKeys.push(mainObj.replace(/ /g,"_"))
                     for (var curAttr of attrDict) {
                         var allKeys = Object.keys(curAttr);
                         // all dicts have this
