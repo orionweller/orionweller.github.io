@@ -166,7 +166,7 @@
                 var makeDom = function() {
                     var attrDict = Object.values(curStructure)[0];
                     var mainObj = Object.keys(curStructure)[0];
-                    form.append(makeFormRow("Enter each '" + mainObj + "' here:", mainObj));
+                    form.append(makeFormRow("Enter a single '" + mainObj + "' here:", mainObj));
                     curKeys.push(mainObj)
                     for (var curAttr of attrDict) {
                         var allKeys = Object.keys(curAttr);
