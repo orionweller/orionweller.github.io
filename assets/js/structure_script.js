@@ -417,22 +417,26 @@
 
                 var validateAnswer = function(key, curInput, strict_alert=true) {
                     let valid = true;
-                    if (curInput == "") {
-                        // checking for emptyness is handled outside of this function
-                        return true;
-                    }
-                    if (curStructureHints[key] == "" || !(key in curStructureHints)) {
-                        if (!curRaw.toLowerCase().includes(curInput.toLowerCase()) && curInput != NA_KEY) {
-                            valid = false;
-                            if (strict_alert) {
-                                alert("The input text '" + curInput + "' does not match the passage. Please make it an exact match");
-                            }
+                    for (answer of curInput.split("|")) {
+                        if (answer == "") {
+                            // checking for emptyness is handled outside of this function
+                            continue
                         }
-                    } else {
-                        if (!curStructureHints[key].includes(curInput.toLowerCase()) && curInput != NA_KEY && curStructureHints[key] != []) {
-                            valid = false;
-                            if (strict_alert) {
-                                alert("The input text '" + curInput + "' does not match the allowed values: " + curStructureHints[key].toString() + ". Please make it an exact match");
+                        if (curStructureHints[key] == "" || !(key in curStructureHints)) {
+                            if (!curRaw.toLowerCase().includes(answer.toLowerCase()) && answer != NA_KEY) {
+                                valid = false;
+                                if (strict_alert) {
+                                    alert("The input text '" + answer + "' does not match the passage. Please make it an exact match");
+                                }
+                                return valid;
+                            }
+                        } else {
+                            if (!curStructureHints[key].includes(curInput.toLowerCase()) && curInput != NA_KEY && curStructureHints[key] != []) {
+                                valid = false;
+                                if (strict_alert) {
+                                    alert("The input text '" + answer + "' does not match the allowed values: " + curStructureHints[key].toString() + ". Please make it an exact match");
+                                }
+                                return valid;
                             }
                         }
                     }
