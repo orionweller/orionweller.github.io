@@ -496,6 +496,7 @@
 
                 var noneSubmit = function() {
                     // an explicit none answer becomes an empty list
+                    this.stopImmediatePropagation();
                     return nextTask(explicitNull=true);
                 }
 
