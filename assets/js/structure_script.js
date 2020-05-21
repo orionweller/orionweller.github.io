@@ -166,7 +166,12 @@
                 var makeDom = function() {
                     var attrDict = Object.values(curStructure)[0];
                     var mainObj = Object.keys(curStructure)[0];
-                    form.append(makeFormRow("Enter a single '" + mainObj + "' here:", mainObj.replace(/ /g,"_")));
+                    if (mainObj.slice(-1) == "s") {
+                        // drop the plural form
+                        form.append(makeFormRow("Enter a single '" + mainObj.slice(0, -1) + "' here:", mainObj.replace(/ /g,"_")));
+                    } else {
+                        form.append(makeFormRow("Enter a single '" + mainObj + "' here:", mainObj.replace(/ /g,"_")));
+                    }
                     curKeys.push(mainObj.replace(/ /g,"_"))
                     for (var curAttr of attrDict) {
                         var allKeys = Object.keys(curAttr);
@@ -489,6 +494,11 @@
                     }
                 });
 
+                $("#noneSubmitted").click(function() {
+                    // an explicit none answer becomes an empty list
+                    nextTask(explicitNull=true)
+                });
+
                 $(document).on('click', '.form-check-input', function() {
                     if ($("input#" + this.id).is(':checked')) {
                         toggleInputBoxForKey("input#" + this.id.replace("skip-", ""), disable=true)
@@ -539,11 +549,15 @@
                 // });
 
                 // every submit button should take us here
-                var nextTask = function() {
+                var nextTask = function(explicitNull=false) {
                     
-                    if (canSubmit()) {
-                        savedAnswer = getValueCurrent();
-                        saveAnswers(savedAnswer);
+                    if (canSubmit() || explicitNull) {
+                        if (!explicitNull) {
+                            savedAnswer = getValueCurrent();
+                            saveAnswers(savedAnswer);
+                        } else {
+                            curAnswers = [];
+                        }
                         finalAnswerList.push(curAnswers)
                         console.log("Added answer to set", curAnswers)
                         console.log("Full Answers", finalAnswerList)
