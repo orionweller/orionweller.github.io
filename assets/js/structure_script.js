@@ -499,10 +499,6 @@
                     return nextTask(explicitNull=true);
                 }
 
-                $("#noneSubmitted").click(function() {
-                    return noneSubmit();
-                });
-
                 $(document).on('click', '.form-check-input', function() {
                     if ($("input#" + this.id).is(':checked')) {
                         toggleInputBoxForKey("input#" + this.id.replace("skip-", ""), disable=true)
