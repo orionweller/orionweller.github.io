@@ -494,9 +494,13 @@
                     }
                 });
 
-                $("#noneSubmitted").click(function() {
+                var noneSubmit = function() {
                     // an explicit none answer becomes an empty list
-                    nextTask(explicitNull=true)
+                    return nextTask(explicitNull=true);
+                }
+
+                $("#noneSubmitted").click(function() {
+                    return noneSubmit();
                 });
 
                 $(document).on('click', '.form-check-input', function() {
