@@ -426,7 +426,6 @@ var nextTask = function() {
 
 var initializeText = function() {
     tokens = curRaw.split(' ');
-    qcomplete.text(currentIndex + "/" + numQ + " Complete")
     // reset since it's a new question
     annotations[key] = []
     oldAnnotations = [] // reset if `NONE` was pressed
@@ -434,7 +433,15 @@ var initializeText = function() {
     if(spans.text().length > 0){
         annotations['answer'] = spansStrToAns(spans.text());
     }
-    questionSub.val(curQuestion)
+    if (curQuestion.includes("<strong>")) {
+        curQuestion = jQuery(curQuestion).text();
+        questionSub.val(curQuestion)
+        qcomplete.text(currentIndex + "/" + numQ + " Complete  **<strong>New Question</strong>**")
+    } else {
+        questionSub.val(curQuestion)
+        qcomplete.text(currentIndex + "/" + numQ + " Complete")
+    }
+
     qOverlap = spansStrToAns(qspans.text());
     show();
 }
