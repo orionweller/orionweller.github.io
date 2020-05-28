@@ -436,7 +436,7 @@ var initializeText = function() {
     if (curQuestion.includes("<strong>")) {
         curQuestion = jQuery(curQuestion).text();
         questionSub.val(curQuestion)
-        qcomplete.text(currentIndex + "/" + numQ + " Complete  **<strong>New Question</strong>**")
+        qcomplete.text(currentIndex + "/" + numQ + " Complete  **New Question**")
     } else {
         questionSub.val(curQuestion)
         qcomplete.text(currentIndex + "/" + numQ + " Complete")
