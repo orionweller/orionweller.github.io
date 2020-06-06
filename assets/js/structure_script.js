@@ -485,10 +485,14 @@
                         curRaw = rawList[currentIndex];
                         curQuestion =  questionList[currentIndex];
                         curStructure = JSON.parse(structureList[currentIndex]);
-                        curStructureHints = parseStructureChoices(curStructure)
-                        initializeText();
                         curAnswers = prevAnswers;
                         currentIndexOfIndividuals = 0;
+                        form.empty()
+                        curKeys = [];
+                        makeDom();
+                        curStructureHints = parseStructureChoices(curStructure);
+                        initializeText();
+                        clearInput();
                         loadDefaultState(currentIndexOfIndividuals);
                         show();
                     }
