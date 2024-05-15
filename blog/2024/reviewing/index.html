@@ -74,7 +74,7 @@
     <script async type="text/json">{
       "title": "Who's Reviewing for Natural Language Processing Conferences?",
       "description": "an analysis using public data",
-      "published": "May 7, 2024",
+      "published": "May 14, 2024",
       "authors": [
         {
           "author": "Orion Weller",
@@ -196,19 +196,7 @@
 <p>I scraped all PDF proceedings from *CL conferences from the <a href="https://aclanthology.org/" target="_blank" rel="noopener noreferrer">ACL Anthology</a> website. Each proceedings contains a list of reviewers who reviewed at the conference. <strong>Note: this is not the number of papers they reviewed, only whether they reviewed at all for the conference</strong>.</p>
 
 <figure>
-    <figure>
-
-  <picture>
-    <source media="(max-width: 480px)" srcset="/assets/img/proceedings-480.webp"></source>
-    <source media="(max-width: 800px)" srcset="/assets/img/proceedings-800.webp"></source>
-    <source media="(max-width: 1400px)" srcset="/assets/img/proceedings-1400.webp"></source>
-    <!-- Fallback to the original file -->
     <img class="img-fluid rounded z-depth-1" src="/assets/img/proceedings.png">
-
-  </picture>
-
-</figure>
-
     <figcaption>An example of the reviewer list in EACL 2023's proceedings PDF</figcaption>
 </figure>
 
@@ -233,19 +221,7 @@
 <p>For an example of how this worked see the example below. It removed affiliations and the OCR’d page number (<code class="language-plaintext highlighter-rouge">xi</code>) and merged names that were split from the end of page to the beginning of the newline:</p>
 
 <figure>
-    <figure>
-
-  <picture>
-    <source media="(max-width: 480px)" srcset="/assets/img/example_extract-480.webp"></source>
-    <source media="(max-width: 800px)" srcset="/assets/img/example_extract-800.webp"></source>
-    <source media="(max-width: 1400px)" srcset="/assets/img/example_extract-1400.webp"></source>
-    <!-- Fallback to the original file -->
-    <img class="img-fluid rounded z-depth-1" src="/assets/img/example_extract.jpg">
-
-  </picture>
-
-</figure>
-
+      <img class="img-fluid rounded z-depth-1" src="/assets/img/example_extract.jpg">
     <figcaption>An example of what the automated extraction did to the reviewer list</figcaption>
 </figure>
 
@@ -607,19 +583,7 @@
 <p>The above prompted me to plot the h-index against the number of times a person reviews.  We can see a pretty strong negative correlation.  This is to be somewhat expected, but the scale of it is quite intense - if no senior people are reviewing, we lose all their experience! Of all the people I annotated, no one with an h-index above 55 revewed more than 2 times over five years.</p>
 
 <figure>
-    <figure>
-
-  <picture>
-    <source media="(max-width: 480px)" srcset="/assets/img/h_index-480.webp"></source>
-    <source media="(max-width: 800px)" srcset="/assets/img/h_index-800.webp"></source>
-    <source media="(max-width: 1400px)" srcset="/assets/img/h_index-1400.webp"></source>
-    <!-- Fallback to the original file -->
     <img class="img-fluid rounded z-depth-1" src="/assets/img/h_index.jpg">
-
-  </picture>
-
-</figure>
-
     <figcaption>Comparing the number of times someone has reviewed in the last five years to their H-Index</figcaption>
 </figure>
 
