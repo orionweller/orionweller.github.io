@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://orionweller.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://orionweller.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-05-15T09:44:15-04:00</updated><id>https://orionweller.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://orionweller.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://orionweller.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-05-15T14:23:43-04:00</updated><id>https://orionweller.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">Who’s Reviewing for Natural Language Processing Conferences?</title><link href="https://orionweller.github.io/blog/2024/reviewing/" rel="alternate" type="text/html" title="Who’s Reviewing for Natural Language Processing Conferences?" /><published>2024-05-14T00:00:00-04:00</published><updated>2024-05-14T00:00:00-04:00</updated><id>https://orionweller.github.io/blog/2024/reviewing</id><content type="html" xml:base="https://orionweller.github.io/blog/2024/reviewing/">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;We all complain about reviewers – and if you go by Twitter complaints – ML-adjacent conference reviewing is getting worse. When reviews are released, Twitter is full of (often justified) complaints and screenshots of the terrible things reviewers are saying.&lt;/p&gt;
 
@@ -10,7 +10,19 @@
 &lt;p&gt;I scraped all PDF proceedings from *CL conferences from the &lt;a href=&quot;https://aclanthology.org/&quot;&gt;ACL Anthology&lt;/a&gt; website. Each proceedings contains a list of reviewers who reviewed at the conference. &lt;strong&gt;Note: this is not the number of papers they reviewed, only whether they reviewed at all for the conference&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;figure&gt;
+    &lt;figure&gt;
+
+  &lt;picture&gt;
+    &lt;source media=&quot;(max-width: 480px)&quot; srcset=&quot;/assets/img/proceedings-480.webp&quot; /&gt;
+    &lt;source media=&quot;(max-width: 800px)&quot; srcset=&quot;/assets/img/proceedings-800.webp&quot; /&gt;
+    &lt;source media=&quot;(max-width: 1400px)&quot; srcset=&quot;/assets/img/proceedings-1400.webp&quot; /&gt;
+    &lt;!-- Fallback to the original file --&gt;
     &lt;img class=&quot;img-fluid rounded z-depth-1&quot; src=&quot;/assets/img/proceedings.png&quot; /&gt;
+
+  &lt;/picture&gt;
+
+&lt;/figure&gt;
+
     &lt;figcaption&gt;An example of the reviewer list in EACL 2023's proceedings PDF&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -35,7 +47,19 @@
 &lt;p&gt;For an example of how this worked see the example below. It removed affiliations and the OCR’d page number (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;xi&lt;/code&gt;) and merged names that were split from the end of page to the beginning of the newline:&lt;/p&gt;
 
 &lt;figure&gt;
-      &lt;img class=&quot;img-fluid rounded z-depth-1&quot; src=&quot;/assets/img/example_extract.jpg&quot; /&gt;
+    &lt;figure&gt;
+
+  &lt;picture&gt;
+    &lt;source media=&quot;(max-width: 480px)&quot; srcset=&quot;/assets/img/example_extract-480.webp&quot; /&gt;
+    &lt;source media=&quot;(max-width: 800px)&quot; srcset=&quot;/assets/img/example_extract-800.webp&quot; /&gt;
+    &lt;source media=&quot;(max-width: 1400px)&quot; srcset=&quot;/assets/img/example_extract-1400.webp&quot; /&gt;
+    &lt;!-- Fallback to the original file --&gt;
+    &lt;img class=&quot;img-fluid rounded z-depth-1&quot; src=&quot;/assets/img/example_extract.jpg&quot; /&gt;
+
+  &lt;/picture&gt;
+
+&lt;/figure&gt;
+
     &lt;figcaption&gt;An example of what the automated extraction did to the reviewer list&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -393,7 +417,19 @@
 &lt;p&gt;The above prompted me to plot the h-index against the number of times a person reviews.  We can see a pretty strong negative correlation.  This is to be somewhat expected, but the scale of it is quite intense - if no senior people are reviewing, we lose all their experience! Of all the people I annotated, no one with an h-index above 55 revewed more than 2 times over five years.&lt;/p&gt;
 
 &lt;figure&gt;
+    &lt;figure&gt;
+
+  &lt;picture&gt;
+    &lt;source media=&quot;(max-width: 480px)&quot; srcset=&quot;/assets/img/h_index-480.webp&quot; /&gt;
+    &lt;source media=&quot;(max-width: 800px)&quot; srcset=&quot;/assets/img/h_index-800.webp&quot; /&gt;
+    &lt;source media=&quot;(max-width: 1400px)&quot; srcset=&quot;/assets/img/h_index-1400.webp&quot; /&gt;
+    &lt;!-- Fallback to the original file --&gt;
     &lt;img class=&quot;img-fluid rounded z-depth-1&quot; src=&quot;/assets/img/h_index.jpg&quot; /&gt;
+
+  &lt;/picture&gt;
+
+&lt;/figure&gt;
+
     &lt;figcaption&gt;Comparing the number of times someone has reviewed in the last five years to their H-Index&lt;/figcaption&gt;
 &lt;/figure&gt;
 
