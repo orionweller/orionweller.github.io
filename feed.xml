@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://orionweller.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://orionweller.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-05-30T19:36:29-04:00</updated><id>https://orionweller.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://orionweller.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://orionweller.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-05-30T19:39:39-04:00</updated><id>https://orionweller.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">Who’s Reviewing for Natural Language Processing Conferences?</title><link href="https://orionweller.github.io/blog/2024/reviewing/" rel="alternate" type="text/html" title="Who’s Reviewing for Natural Language Processing Conferences?" /><published>2024-05-14T00:00:00-04:00</published><updated>2024-05-14T00:00:00-04:00</updated><id>https://orionweller.github.io/blog/2024/reviewing</id><content type="html" xml:base="https://orionweller.github.io/blog/2024/reviewing/">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;We all complain about reviewers – and if you go by Twitter complaints – ML-adjacent conference reviewing is getting worse. When reviews are released, Twitter is full of (often justified) complaints and screenshots of the terrible things reviewers are saying.&lt;/p&gt;
 
@@ -352,7 +352,7 @@
 &lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
-      &lt;th&gt;Region&lt;/th&gt;
+      &lt;th&gt;Affiliation Region&lt;/th&gt;
       &lt;th style=&quot;text-align: right&quot;&gt;Average Reviews&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
@@ -372,7 +372,7 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;North America reviews the most on average, followed by Europe, and then Asia last.&lt;/p&gt;
+&lt;p&gt;North American affiliates review the most on average, followed by Europe affiliates, and then Asian affiliates last.&lt;/p&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -462,7 +462,7 @@
 &lt;p&gt;I think a good argument can be made that not enough students are reviewing – but clearly we can see that students are reviewing a proportionally equivalent amount when they are invited to review.&lt;/p&gt;
 
 &lt;h2 id=&quot;h-index-vs-reviewing&quot;&gt;H-Index vs Reviewing?&lt;/h2&gt;
-&lt;p&gt;The above prompted me to plot the h-index against the number of times a person reviews.  We can see a pretty strong negative correlation.  This is to be somewhat expected, but the scale of it is quite intense - if no senior people are reviewing/AC/SAC’ing, we lose all their experience! Of all the people I annotated, no one with an h-index above 55 reviewed more than 2 times over five years.&lt;/p&gt;
+&lt;p&gt;The above prompted me to plot the h-index against the number of times a person reviews.  We can see a pretty strong negative correlation.  This is to be somewhat expected, but the scale of it is quite intense - if no senior people are reviewing/AC’ing/SAC’ing, we lose all their experience! Of all the people I annotated, no one with an h-index above 55 reviewed/AC’d/SAC’d more than 2 times over five years.&lt;/p&gt;
 
 &lt;figure&gt;
     &lt;figure&gt;
@@ -499,14 +499,8 @@
 
 &lt;p&gt;Sure, send me an email to get yours (not your friends). But since you’ve done your own reviewing, feel free to compute your Papers Per Reviewing Time using those numbers!&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;I think senior researchers should review less!&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Great point, and I think it would be unfair to expect them to review as much as PhD students! However, as I said earlier, senior researchers are needed for the review process to go smoothly – the fact that they skip out the most really hurts the community. So some threshold needs to be considered and it is generally much higher than what they are currently doing (on average).&lt;/p&gt;
-
 &lt;h2 id=&quot;acknowledgments&quot;&gt;Acknowledgments&lt;/h2&gt;
-&lt;p&gt;I’d like to thank Luca Soldaini and Kyle Lo who helped inspire this project and provided useful feedback. I’d also like to thank Marc Marone, Nathaniel Weir, and Aleem Khan for their advice on data processing and proofreading.&lt;/p&gt;
+&lt;p&gt;I’d like to thank Luca Soldaini and Kyle Lo who helped inspire this project and provided useful feedback. I’d also like to thank Marc Marone, Nathaniel Weir, Aleem Khan, and Michael Saxon for their advice on data processing and proofreading.&lt;/p&gt;
 
 &lt;h2 id=&quot;bibtext&quot;&gt;BibText&lt;/h2&gt;
 &lt;p&gt;If you found this blogpost useful and would like to cite it, you can cite it as:&lt;/p&gt;
