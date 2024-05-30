@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://orionweller.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://orionweller.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-05-30T19:39:39-04:00</updated><id>https://orionweller.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://orionweller.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://orionweller.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-05-30T19:41:09-04:00</updated><id>https://orionweller.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">Who’s Reviewing for Natural Language Processing Conferences?</title><link href="https://orionweller.github.io/blog/2024/reviewing/" rel="alternate" type="text/html" title="Who’s Reviewing for Natural Language Processing Conferences?" /><published>2024-05-14T00:00:00-04:00</published><updated>2024-05-14T00:00:00-04:00</updated><id>https://orionweller.github.io/blog/2024/reviewing</id><content type="html" xml:base="https://orionweller.github.io/blog/2024/reviewing/">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;We all complain about reviewers – and if you go by Twitter complaints – ML-adjacent conference reviewing is getting worse. When reviews are released, Twitter is full of (often justified) complaints and screenshots of the terrible things reviewers are saying.&lt;/p&gt;
 
@@ -91,7 +91,7 @@
   &lt;li&gt;Prominent persons who did not review in the last five years include *CL conference keynote speakers, best paper award winners (many different such people), and other “leading” researchers whom you the reader have certainly heard of.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;⚠️ Reminder: when I say “review” that includes AC/SAC/PC’ing!&lt;/p&gt;
+&lt;p&gt;⚠️ Reminder: when I say “review” that includes AC/SAC’ing!&lt;/p&gt;
 
 &lt;p&gt;I was quite shocked to see such a large number of people who haven’t reviewed: the community has qualified reviewers – they just aren’t reviewing over the course of five years!&lt;/p&gt;
 
@@ -372,7 +372,7 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;North American affiliates review the most on average, followed by Europe affiliates, and then Asian affiliates last.&lt;/p&gt;
+&lt;p&gt;North American affiliates review the most on average, followed by Europe affiliates, and then Asian affiliates last. ⚠️ Reminder, these are based on regional affiliation and not ethnicity.&lt;/p&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
