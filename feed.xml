@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://orionweller.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://orionweller.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-05-30T01:16:17-04:00</updated><id>https://orionweller.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://orionweller.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://orionweller.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-05-30T19:31:00-04:00</updated><id>https://orionweller.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">Who’s Reviewing for Natural Language Processing Conferences?</title><link href="https://orionweller.github.io/blog/2024/reviewing/" rel="alternate" type="text/html" title="Who’s Reviewing for Natural Language Processing Conferences?" /><published>2024-05-14T00:00:00-04:00</published><updated>2024-05-14T00:00:00-04:00</updated><id>https://orionweller.github.io/blog/2024/reviewing</id><content type="html" xml:base="https://orionweller.github.io/blog/2024/reviewing/">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;We all complain about reviewers – and if you go by Twitter complaints – ML-adjacent conference reviewing is getting worse. When reviews are released, Twitter is full of (often justified) complaints and screenshots of the terrible things reviewers are saying.&lt;/p&gt;
 
-&lt;p&gt;There are a number of problems in reviewing (poor quality reviews, GPT-generated reviews, reviewers who don’t reply to rebuttals, etc.) but a consistent theme has been that the number of papers submitted to conferences is outstripping the number of qualified reviewers. And this makes intuitive sense: as the field grows in popularity and attracts a larger audience it will take time for newcomers to be qualified to review.&lt;/p&gt;
+&lt;p&gt;There are a number of problems in reviewing (poor quality reviews, GPT-generated reviews, reviewers who don’t reply to rebuttals, etc.) but a consistent theme has been that the number of papers submitted to conferences is outstripping the number of qualified reviewers/ACs/SACs. And this makes intuitive sense: as the field grows in popularity and attracts a larger audience it will take time for newcomers to be qualified to review.&lt;/p&gt;
 
 &lt;p&gt;This blog post focuses on the question “who is reviewing?” Although I can’t answer this question for all ML venues, I can answer it for the Natural Language Processing (NLP) community which reliably publishes a list of reviewers in their proceedings. Through this, I can gather fine-grained information for &lt;em&gt;how many times&lt;/em&gt; individuals are reviewing compared to &lt;em&gt;how many papers&lt;/em&gt; they publish.&lt;/p&gt;
 
 &lt;h2 id=&quot;data&quot;&gt;Data&lt;/h2&gt;
-&lt;p&gt;I scraped all PDF proceedings from *CL conferences from the &lt;a href=&quot;https://aclanthology.org/&quot;&gt;ACL Anthology&lt;/a&gt; website. Each proceedings contains a list of reviewers who reviewed at the conference. &lt;strong&gt;Note: this is not the number of papers they reviewed, only whether they reviewed at all for the conference&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;I scraped all PDF proceedings from *CL conferences from the &lt;a href=&quot;https://aclanthology.org/&quot;&gt;ACL Anthology&lt;/a&gt; website. Each proceedings contains a list of reviewers who reviewed at the conference. &lt;strong&gt;Note: this is not the number of papers they reviewed, only whether they reviewed/AC’d/SAC’d at all for the conference&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;figure&gt;
     &lt;figure&gt;
@@ -36,9 +36,10 @@
 &lt;p&gt;⚠️⚠️⚠️&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;This data &lt;strong&gt;only includes reviewing and publications at *CL venues&lt;/strong&gt;. It is possible (and likely) that people are also reviewing for ML/Speech/Vision conferences. However, I think it reasonable to expect everyone who publishes at *CL venues to also provide service for the NLP community so I don’t think this provides an excuse not to review.&lt;/li&gt;
-  &lt;li&gt;There are many types of academic service (PCs, ACL board, etc.). It is non-trivial to decide a weighting for these, thus I simply count them equally – but clearly the nature of the service is quite different. However, since the number of people who fill these higher level positions is small it has little impact on the overall analysis (and none of them were annotated in the analysis section).&lt;/li&gt;
+  &lt;li&gt;There are many types of academic service (PCs, ACL board, etc.). It is non-trivial to decide a weighting for these, thus I simply count them equally – but clearly the nature of the service is quite different. However, since the number of people who fill these extremely high world-load positions is small it has little impact on the overall analysis (and none of them were annotated in the analysis section).&lt;/li&gt;
   &lt;li&gt;The data only contains the number of &lt;strong&gt;times&lt;/strong&gt; someone has reviewed. Thus, someone could have taken on a lighter load and have been counted equally high. However, the number of papers reviewed is not public and overall, I think this is a relatively minor issue.&lt;/li&gt;
   &lt;li&gt;This data also doesn’t capture some forms of service, such as people who sub-review.&lt;/li&gt;
+  &lt;li&gt;This data &lt;strong&gt;does&lt;/strong&gt; capture SAC/AC/etc and I will refer them as “reviewers” even though their job description is different. Thus when I talked about “reviewing” remember that means reviewing/AC’ing/SAC’ing etc.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;data-quality&quot;&gt;Data Quality&lt;/h3&gt;
@@ -85,17 +86,19 @@
 
 &lt;p&gt;Some surprising statistics:&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;2,085 reviewers published more than 5 papers at main venues but did not review (or AC/PC/etc.) at all in the last 5 years&lt;/li&gt;
+  &lt;li&gt;2,085 reviewers published more than 5 papers at main venues but did not review (or AC/SAC/etc.) at all in the last 5 years&lt;/li&gt;
   &lt;li&gt;135 reviewers published zero papers but still reviewed (yay, thank you!)&lt;/li&gt;
   &lt;li&gt;Prominent persons who did not review in the last five years include *CL conference keynote speakers, best paper award winners (many different such people), and other “leading” researchers whom you the reader have certainly heard of.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;⚠️ Reminder: when I say “review” that includes AC/SAC/PC’ing!&lt;/p&gt;
 
 &lt;p&gt;I was quite shocked to see such a large number of people who haven’t reviewed: the community has qualified reviewers – they just aren’t reviewing over the course of five years!&lt;/p&gt;
 
 &lt;p&gt;I was even more shocked to see the number of senior people who aren’t doing any community service for *CL venues. This was probably my biggest reason for not naming-and-shaming – my career would be seriously hurt if these people decided not to hire me!&lt;/p&gt;
 
 &lt;h3 id=&quot;most-egregious-non-reviewers&quot;&gt;Most Egregious Non-Reviewers&lt;/h3&gt;
-&lt;p&gt;Drilling in on those who are publishing &amp;gt; 5 papers but not reviewing, who are they?&lt;/p&gt;
+&lt;p&gt;Drilling in on those who are publishing &amp;gt; 5 papers but not reviewing/AC/SAC’ing, who are they?&lt;/p&gt;
 
 &lt;p&gt;I manually annotated demographics for the top 25 offenders (ranging from 30 to 100+ published *CL papers in the last 5 years):&lt;/p&gt;
 
@@ -181,68 +184,52 @@
 &lt;p&gt;We see that those who are reviewing without publishing papers are typically from industry, from North America, and in the junior to senior researcher stage. This makes intuitive sense as there is less incentive to publish in industry, but many have ties to conferences and continue to serve. Their affiliations are generally from smaller startups as well as several from Google and Apple. We are grateful for their service to the community!&lt;/p&gt;
 
 &lt;h3 id=&quot;people-who-have-published-and-reviewed&quot;&gt;People who have published and reviewed&lt;/h3&gt;
+
 &lt;p&gt;We’ve now covered the edge cases, where people either hadn’t published or hadn’t reviewed in the past five years. But what about those that have reviewed and published?&lt;/p&gt;
 
+&lt;h4 id=&quot;how-much-should-researchers-and-senior-ones-review&quot;&gt;How much should researchers (and senior ones) review?&lt;/h4&gt;
 &lt;p&gt;There is no magic number of times that one should review per publication – however, I think we could probably agree that it would be unkind to publish large numbers of papers and only review once. The percentiles of who # of Papers Per Review is as follows:&lt;/p&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Percentile&lt;/th&gt;
-      &lt;th style=&quot;text-align: right&quot;&gt;Papers Per Review&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Percentile&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;0.1&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;0.2&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;0.3&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;0.4&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;0.5&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;0.6&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;0.7&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;0.8&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;0.9&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;0.95&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;0.99&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;0.1&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;0.5&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;0.2&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;1.0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;0.3&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;1.0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;0.4&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;1.5&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;0.5&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;2.0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;0.6&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;2.5&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;0.7&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;3.0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;0.8&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;4.0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;0.9&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;6.3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;0.95&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;9.0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;0.99&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;17.7&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;Papers Per Review&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1.5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2.5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;6.3&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;9.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;17.7&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;A relatively service-friendly ratio might be something like 5 publications to one time reviewing (given that reviewers are typically asked to review five papers per conference and that it is the 85th percentile). On one hand, this becomes difficult for very senior researchers, who publish lots of papers! On the other hand, our community needs senior reviewers along with the junior reviewers, so researchers who publish many papers without reviewing as much leaves the community bereft of their wisdom.&lt;/p&gt;
+&lt;p&gt;A relatively service-friendly ratio might be something like 5 publications to one time reviewing/AC/SAC’ing (given that reviewers are typically asked to review five papers per conference and that it is the 85th percentile).&lt;/p&gt;
 
-&lt;p&gt;So looking at this threshold of 5 papers per review, we find that 1368 people (~14% of people who have reviewed and published) have a “Papers Per Reviewing Time” ratio greater than 5.&lt;/p&gt;
+&lt;p&gt;On one hand, reviewing/AC/SAC’ing once per every 5 papers becomes difficult for very senior researchers, who publish lots of papers! On the other hand, our community needs senior reviewers/AC/SAC’ing along with the less experienced reviewers (especially for the AC’s and SAC’s), so researchers who publish many papers without reviewing as much leaves the community bereft of their wisdom and forcing more and more junior people to take on these roles.&lt;/p&gt;
+
+&lt;h4 id=&quot;statistics-of-published-and-reviewing-authors&quot;&gt;Statistics of Published and Reviewing Authors&lt;/h4&gt;
 
 &lt;p&gt;What are the demographics of those who have the worst &lt;em&gt;Papers Per Reviewing Time&lt;/em&gt; ratio?&lt;/p&gt;
 
@@ -336,7 +323,7 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;We note that this shows a much more balanced set of reviewers: mostly junior, a few students, a few faculty, and mostly from academia. Those with female pronouns are still underrepresented but are more balanced than in the previous sections. Overall, reviewers come from a broad mix of university and industry affiliations, with no main pattern.&lt;/p&gt;
+&lt;p&gt;We note that this shows a much more balanced set of reviewers: mostly junior researchers (post-PhD, &amp;lt; 7 years), a few students, a few faculty, and mostly from academia. Those with female pronouns are still underrepresented but are more balanced than in the previous sections. Overall, reviewers come from a broad mix of university and industry affiliations, with no main pattern.&lt;/p&gt;
 
 &lt;h2 id=&quot;total-statistics&quot;&gt;Total Statistics&lt;/h2&gt;
 &lt;p&gt;I took all the annotated results and computed the following amount of reviews that each demographic does, on average:&lt;/p&gt;
@@ -400,17 +387,17 @@
       &lt;td style=&quot;text-align: right&quot;&gt;5.8&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;Junior&lt;/td&gt;
+      &lt;td&gt;Junior (&amp;lt;7 years post-PhD)&lt;/td&gt;
       &lt;td style=&quot;text-align: right&quot;&gt;6.7&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;Senior&lt;/td&gt;
+      &lt;td&gt;Senior (&amp;gt; 7 years post-PhD)&lt;/td&gt;
       &lt;td style=&quot;text-align: right&quot;&gt;4.2&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;We see that those post-PhD but less than 7 years after review the most. Senior researchers review the least.&lt;/p&gt;
+&lt;p&gt;We see that those post-PhD but less than 7 years after review/AC/SAC the most. Senior researchers review/AC/SAC the least.&lt;/p&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -475,7 +462,7 @@
 &lt;p&gt;I think a good argument can be made that not enough students are reviewing – but clearly we can see that students are reviewing a proportionally equivalent amount when they are invited to review.&lt;/p&gt;
 
 &lt;h2 id=&quot;h-index-vs-reviewing&quot;&gt;H-Index vs Reviewing?&lt;/h2&gt;
-&lt;p&gt;The above prompted me to plot the h-index against the number of times a person reviews.  We can see a pretty strong negative correlation.  This is to be somewhat expected, but the scale of it is quite intense - if no senior people are reviewing, we lose all their experience! Of all the people I annotated, no one with an h-index above 55 reviewed more than 2 times over five years.&lt;/p&gt;
+&lt;p&gt;The above prompted me to plot the h-index against the number of times a person reviews.  We can see a pretty strong negative correlation.  This is to be somewhat expected, but the scale of it is quite intense - if no senior people are reviewing/AC/SAC’ing, we lose all their experience! Of all the people I annotated, no one with an h-index above 55 reviewed more than 2 times over five years.&lt;/p&gt;
 
 &lt;figure&gt;
     &lt;figure&gt;

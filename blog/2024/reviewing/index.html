@@ -189,12 +189,12 @@
         <h2 id="introduction">Introduction</h2>
 <p>We all complain about reviewers – and if you go by Twitter complaints – ML-adjacent conference reviewing is getting worse. When reviews are released, Twitter is full of (often justified) complaints and screenshots of the terrible things reviewers are saying.</p>
 
-<p>There are a number of problems in reviewing (poor quality reviews, GPT-generated reviews, reviewers who don’t reply to rebuttals, etc.) but a consistent theme has been that the number of papers submitted to conferences is outstripping the number of qualified reviewers. And this makes intuitive sense: as the field grows in popularity and attracts a larger audience it will take time for newcomers to be qualified to review.</p>
+<p>There are a number of problems in reviewing (poor quality reviews, GPT-generated reviews, reviewers who don’t reply to rebuttals, etc.) but a consistent theme has been that the number of papers submitted to conferences is outstripping the number of qualified reviewers/ACs/SACs. And this makes intuitive sense: as the field grows in popularity and attracts a larger audience it will take time for newcomers to be qualified to review.</p>
 
 <p>This blog post focuses on the question “who is reviewing?” Although I can’t answer this question for all ML venues, I can answer it for the Natural Language Processing (NLP) community which reliably publishes a list of reviewers in their proceedings. Through this, I can gather fine-grained information for <em>how many times</em> individuals are reviewing compared to <em>how many papers</em> they publish.</p>
 
 <h2 id="data">Data</h2>
-<p>I scraped all PDF proceedings from *CL conferences from the <a href="https://aclanthology.org/" target="_blank" rel="noopener noreferrer">ACL Anthology</a> website. Each proceedings contains a list of reviewers who reviewed at the conference. <strong>Note: this is not the number of papers they reviewed, only whether they reviewed at all for the conference</strong>.</p>
+<p>I scraped all PDF proceedings from *CL conferences from the <a href="https://aclanthology.org/" target="_blank" rel="noopener noreferrer">ACL Anthology</a> website. Each proceedings contains a list of reviewers who reviewed at the conference. <strong>Note: this is not the number of papers they reviewed, only whether they reviewed/AC’d/SAC’d at all for the conference</strong>.</p>
 
 <figure>
     <figure>
@@ -223,9 +223,10 @@
 <p>⚠️⚠️⚠️</p>
 <ul>
   <li>This data <strong>only includes reviewing and publications at *CL venues</strong>. It is possible (and likely) that people are also reviewing for ML/Speech/Vision conferences. However, I think it reasonable to expect everyone who publishes at *CL venues to also provide service for the NLP community so I don’t think this provides an excuse not to review.</li>
-  <li>There are many types of academic service (PCs, ACL board, etc.). It is non-trivial to decide a weighting for these, thus I simply count them equally – but clearly the nature of the service is quite different. However, since the number of people who fill these higher level positions is small it has little impact on the overall analysis (and none of them were annotated in the analysis section).</li>
+  <li>There are many types of academic service (PCs, ACL board, etc.). It is non-trivial to decide a weighting for these, thus I simply count them equally – but clearly the nature of the service is quite different. However, since the number of people who fill these extremely high world-load positions is small it has little impact on the overall analysis (and none of them were annotated in the analysis section).</li>
   <li>The data only contains the number of <strong>times</strong> someone has reviewed. Thus, someone could have taken on a lighter load and have been counted equally high. However, the number of papers reviewed is not public and overall, I think this is a relatively minor issue.</li>
   <li>This data also doesn’t capture some forms of service, such as people who sub-review.</li>
+  <li>This data <strong>does</strong> capture SAC/AC/etc and I will refer them as “reviewers” even though their job description is different. Thus when I talked about “reviewing” remember that means reviewing/AC’ing/SAC’ing etc.</li>
 </ul>
 
 <h3 id="data-quality">Data Quality</h3>
@@ -272,17 +273,19 @@
 
 <p>Some surprising statistics:</p>
 <ul>
-  <li>2,085 reviewers published more than 5 papers at main venues but did not review (or AC/PC/etc.) at all in the last 5 years</li>
+  <li>2,085 reviewers published more than 5 papers at main venues but did not review (or AC/SAC/etc.) at all in the last 5 years</li>
   <li>135 reviewers published zero papers but still reviewed (yay, thank you!)</li>
   <li>Prominent persons who did not review in the last five years include *CL conference keynote speakers, best paper award winners (many different such people), and other “leading” researchers whom you the reader have certainly heard of.</li>
 </ul>
+
+<p>⚠️ Reminder: when I say “review” that includes AC/SAC/PC’ing!</p>
 
 <p>I was quite shocked to see such a large number of people who haven’t reviewed: the community has qualified reviewers – they just aren’t reviewing over the course of five years!</p>
 
 <p>I was even more shocked to see the number of senior people who aren’t doing any community service for *CL venues. This was probably my biggest reason for not naming-and-shaming – my career would be seriously hurt if these people decided not to hire me!</p>
 
 <h3 id="most-egregious-non-reviewers">Most Egregious Non-Reviewers</h3>
-<p>Drilling in on those who are publishing &gt; 5 papers but not reviewing, who are they?</p>
+<p>Drilling in on those who are publishing &gt; 5 papers but not reviewing/AC/SAC’ing, who are they?</p>
 
 <p>I manually annotated demographics for the top 25 offenders (ranging from 30 to 100+ published *CL papers in the last 5 years):</p>
 
@@ -370,68 +373,52 @@
 <p>We see that those who are reviewing without publishing papers are typically from industry, from North America, and in the junior to senior researcher stage. This makes intuitive sense as there is less incentive to publish in industry, but many have ties to conferences and continue to serve. Their affiliations are generally from smaller startups as well as several from Google and Apple. We are grateful for their service to the community!</p>
 
 <h3 id="people-who-have-published-and-reviewed">People who have published and reviewed</h3>
+
 <p>We’ve now covered the edge cases, where people either hadn’t published or hadn’t reviewed in the past five years. But what about those that have reviewed and published?</p>
 
+<h4 id="how-much-should-researchers-and-senior-ones-review">How much should researchers (and senior ones) review?</h4>
 <p>There is no magic number of times that one should review per publication – however, I think we could probably agree that it would be unkind to publish large numbers of papers and only review once. The percentiles of who # of Papers Per Review is as follows:</p>
 
 <table>
   <thead>
     <tr>
-      <th style="text-align: left">Percentile</th>
-      <th style="text-align: right">Papers Per Review</th>
+      <th style="text-align: right">Percentile</th>
+      <th style="text-align: center">0.1</th>
+      <th style="text-align: center">0.2</th>
+      <th style="text-align: center">0.3</th>
+      <th style="text-align: center">0.4</th>
+      <th style="text-align: center">0.5</th>
+      <th style="text-align: center">0.6</th>
+      <th style="text-align: center">0.7</th>
+      <th style="text-align: center">0.8</th>
+      <th style="text-align: center">0.9</th>
+      <th style="text-align: center">0.95</th>
+      <th style="text-align: center">0.99</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left">0.1</td>
-      <td style="text-align: right">0.5</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">0.2</td>
-      <td style="text-align: right">1.0</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">0.3</td>
-      <td style="text-align: right">1.0</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">0.4</td>
-      <td style="text-align: right">1.5</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">0.5</td>
-      <td style="text-align: right">2.0</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">0.6</td>
-      <td style="text-align: right">2.5</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">0.7</td>
-      <td style="text-align: right">3.0</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">0.8</td>
-      <td style="text-align: right">4.0</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">0.9</td>
-      <td style="text-align: right">6.3</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">0.95</td>
-      <td style="text-align: right">9.0</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">0.99</td>
-      <td style="text-align: right">17.7</td>
+      <td style="text-align: right">Papers Per Review</td>
+      <td style="text-align: center">0.5</td>
+      <td style="text-align: center">1.0</td>
+      <td style="text-align: center">1.0</td>
+      <td style="text-align: center">1.5</td>
+      <td style="text-align: center">2.0</td>
+      <td style="text-align: center">2.5</td>
+      <td style="text-align: center">3.0</td>
+      <td style="text-align: center">4.0</td>
+      <td style="text-align: center">6.3</td>
+      <td style="text-align: center">9.0</td>
+      <td style="text-align: center">17.7</td>
     </tr>
   </tbody>
 </table>
 
-<p>A relatively service-friendly ratio might be something like 5 publications to one time reviewing (given that reviewers are typically asked to review five papers per conference and that it is the 85th percentile). On one hand, this becomes difficult for very senior researchers, who publish lots of papers! On the other hand, our community needs senior reviewers along with the junior reviewers, so researchers who publish many papers without reviewing as much leaves the community bereft of their wisdom.</p>
+<p>A relatively service-friendly ratio might be something like 5 publications to one time reviewing/AC/SAC’ing (given that reviewers are typically asked to review five papers per conference and that it is the 85th percentile).</p>
 
-<p>So looking at this threshold of 5 papers per review, we find that 1368 people (~14% of people who have reviewed and published) have a “Papers Per Reviewing Time” ratio greater than 5.</p>
+<p>On one hand, reviewing/AC/SAC’ing once per every 5 papers becomes difficult for very senior researchers, who publish lots of papers! On the other hand, our community needs senior reviewers/AC/SAC’ing along with the less experienced reviewers (especially for the AC’s and SAC’s), so researchers who publish many papers without reviewing as much leaves the community bereft of their wisdom and forcing more and more junior people to take on these roles.</p>
+
+<h4 id="statistics-of-published-and-reviewing-authors">Statistics of Published and Reviewing Authors</h4>
 
 <p>What are the demographics of those who have the worst <em>Papers Per Reviewing Time</em> ratio?</p>
 
@@ -527,7 +514,7 @@
   </tbody>
 </table>
 
-<p>We note that this shows a much more balanced set of reviewers: mostly junior, a few students, a few faculty, and mostly from academia. Those with female pronouns are still underrepresented but are more balanced than in the previous sections. Overall, reviewers come from a broad mix of university and industry affiliations, with no main pattern.</p>
+<p>We note that this shows a much more balanced set of reviewers: mostly junior researchers (post-PhD, &lt; 7 years), a few students, a few faculty, and mostly from academia. Those with female pronouns are still underrepresented but are more balanced than in the previous sections. Overall, reviewers come from a broad mix of university and industry affiliations, with no main pattern.</p>
 
 <h2 id="total-statistics">Total Statistics</h2>
 <p>I took all the annotated results and computed the following amount of reviews that each demographic does, on average:</p>
@@ -591,17 +578,17 @@
       <td style="text-align: right">5.8</td>
     </tr>
     <tr>
-      <td>Junior</td>
+      <td>Junior (&lt;7 years post-PhD)</td>
       <td style="text-align: right">6.7</td>
     </tr>
     <tr>
-      <td>Senior</td>
+      <td>Senior (&gt; 7 years post-PhD)</td>
       <td style="text-align: right">4.2</td>
     </tr>
   </tbody>
 </table>
 
-<p>We see that those post-PhD but less than 7 years after review the most. Senior researchers review the least.</p>
+<p>We see that those post-PhD but less than 7 years after review/AC/SAC the most. Senior researchers review/AC/SAC the least.</p>
 
 <table>
   <thead>
@@ -666,7 +653,7 @@
 <p>I think a good argument can be made that not enough students are reviewing – but clearly we can see that students are reviewing a proportionally equivalent amount when they are invited to review.</p>
 
 <h2 id="h-index-vs-reviewing">H-Index vs Reviewing?</h2>
-<p>The above prompted me to plot the h-index against the number of times a person reviews.  We can see a pretty strong negative correlation.  This is to be somewhat expected, but the scale of it is quite intense - if no senior people are reviewing, we lose all their experience! Of all the people I annotated, no one with an h-index above 55 reviewed more than 2 times over five years.</p>
+<p>The above prompted me to plot the h-index against the number of times a person reviews.  We can see a pretty strong negative correlation.  This is to be somewhat expected, but the scale of it is quite intense - if no senior people are reviewing/AC/SAC’ing, we lose all their experience! Of all the people I annotated, no one with an h-index above 55 reviewed more than 2 times over five years.</p>
 
 <figure>
     <figure>
