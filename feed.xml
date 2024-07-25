@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://orionweller.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://orionweller.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-06-08T15:11:25-04:00</updated><id>https://orionweller.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://orionweller.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://orionweller.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-07-24T23:06:54-04:00</updated><id>https://orionweller.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">Who’s Reviewing for Natural Language Processing Conferences?</title><link href="https://orionweller.github.io/blog/2024/reviewing/" rel="alternate" type="text/html" title="Who’s Reviewing for Natural Language Processing Conferences?" /><published>2024-05-14T00:00:00-04:00</published><updated>2024-05-14T00:00:00-04:00</updated><id>https://orionweller.github.io/blog/2024/reviewing</id><content type="html" xml:base="https://orionweller.github.io/blog/2024/reviewing/">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;We all complain about reviewers – and if you go by Twitter complaints – ML-adjacent conference reviewing is getting worse. When reviews are released, Twitter is full of (often justified) complaints and screenshots of the terrible things reviewers are saying.&lt;/p&gt;
 
@@ -7,7 +7,7 @@
 &lt;p&gt;This blog post focuses on the question “who is reviewing?” Although I can’t answer this question for all ML venues, I can answer it for the Natural Language Processing (NLP) community which reliably publishes a list of reviewers in their proceedings. Through this, I can gather fine-grained information for &lt;em&gt;how many times&lt;/em&gt; individuals are reviewing compared to &lt;em&gt;how many papers&lt;/em&gt; they publish.&lt;/p&gt;
 
 &lt;h2 id=&quot;data&quot;&gt;Data&lt;/h2&gt;
-&lt;p&gt;I scraped all PDF proceedings from *CL conferences from the &lt;a href=&quot;https://aclanthology.org/&quot;&gt;ACL Anthology&lt;/a&gt; website. Each proceedings contains a list of reviewers who reviewed at the conference. &lt;strong&gt;Note: this is not the number of papers they reviewed, only whether they reviewed/AC’d/SAC’d at all for the conference&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;I scraped all PDF proceedings from *CL conferences from the &lt;a href=&quot;https://aclanthology.org/&quot;&gt;ACL Anthology&lt;/a&gt; website. Each proceedings contains a list of reviewers who reviewed at the conference. Note: this is &lt;strong&gt;not the number of papers&lt;/strong&gt; they reviewed, &lt;strong&gt;only whether they reviewed/AC’d/SAC’d at all&lt;/strong&gt; for *CL conference**.&lt;/p&gt;
 
 &lt;figure&gt;
     &lt;figure&gt;
@@ -227,7 +227,7 @@
 
 &lt;p&gt;A relatively service-friendly ratio might be something like 5 publications to one time reviewing/AC/SAC’ing (given that reviewers are typically asked to review five papers per conference and that it is the 85th percentile).&lt;/p&gt;
 
-&lt;p&gt;On one hand, reviewing/AC/SAC’ing once per every 5 papers becomes difficult for very senior researchers, who publish lots of papers! On the other hand, our community needs senior reviewers/AC/SAC’ing along with the less experienced reviewers (especially for the AC’s and SAC’s), so researchers who publish many papers without reviewing as much leaves the community bereft of their wisdom and forcing more and more junior people to take on these roles.&lt;/p&gt;
+&lt;p&gt;On one hand, reviewing/AC/SAC’ing once per every 5 papers becomes difficult for very senior researchers, who publish lots of papers! On the other hand, our community needs senior reviewers/AC/SAC’ing along with the less experienced reviewers (especially for the AC’s and SAC’s), so researchers who publish many papers without reviewing as much leaves the community bereft of their wisdom and forces more and more junior people to take on these roles.&lt;/p&gt;
 
 &lt;h4 id=&quot;statistics-of-published-and-reviewing-authors&quot;&gt;Statistics of Published and Reviewing Authors&lt;/h4&gt;
 
