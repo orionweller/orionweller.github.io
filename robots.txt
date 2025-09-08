@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://orionweller.github.io//sitemap.xml

@@ -1,1 +1,0 @@
-bundle exec jekyll serve --open-url -P 4002 --watch
