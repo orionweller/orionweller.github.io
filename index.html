@@ -78,7 +78,7 @@
                 <a class="nav-link" href="/publications/">publications</a>
               </li>
 <li class="nav-item ">
-                <a class="nav-link" href="https://orionweller.github.io//assets/pdf/Orion_Weller_CV.pdf">vitae (09.2025)</a>
+                <a class="nav-link" href="https://orionweller.github.io//assets/pdf/Orion_Weller_CV.pdf">CV (Sept 2025)</a>
               
             </ul>
           </div>
@@ -99,6 +99,47 @@
         </header>
 
         <article>
+          <style>
+            .collapse-toggle { text-decoration: none; }
+            .collapse-toggle .fa-chevron-down { transition: transform .2s ease; }
+            .collapse-toggle[aria-expanded="true"] .fa-chevron-down { transform: rotate(180deg); }
+          </style>
+          <!-- Job market + impact highlights card -->
+          <div class="card border-danger my-3">
+            <div class="card-header bg-danger text-white py-2 d-flex align-items-center justify-content-between">
+              <a class="text-white" data-toggle="collapse" href="#job-market-card" role="button" aria-expanded="true" aria-controls="job-market-card">On the job market</a>
+              <a class="text-white collapse-toggle" data-toggle="collapse" href="#job-market-card" role="button" aria-expanded="true" aria-controls="job-market-card" aria-label="Toggle details">
+                <i class="fas fa-chevron-down"></i>
+              </a>
+            </div>
+            <div id="job-market-card" class="collapse show">
+              <div class="card-body py-3">
+                <p class="mb-2">
+                  I’m seeking <strong>full‑time research scientist</strong> roles starting <strong>early 2026</strong> at the
+                  intersection of <strong>agentic search</strong> and <strong>LLMs</strong>. If there’s a good fit, please contact me at
+                  {last_name}{first_name}@gmail.com.
+                </p>
+                <ul class="mb-2">
+                  <li>
+<strong>ModernBERT</strong>: 20M+ downloads; long‑context, fast, memory‑efficient encoder.
+                    <a href="https://arxiv.org/abs/2412.13663" target="_blank" rel="noopener noreferrer">paper</a> ·
+                    <a href="https://github.com/AnswerDotAI/ModernBERT" target="_blank" rel="noopener noreferrer">code</a>
+                  </li>
+                  <li>
+<strong>Press coverage</strong>: my work has received media coverage, including recent work with Google DeepMind at
+                    <a href="https://venturebeat.com/ai/new-deepmind-study-reveals-a-hidden-bottleneck-in-vector-search-that-breaks" target="_blank" rel="noopener noreferrer">VentureBeat</a>.
+                  </li>
+                  <li>
+<strong>Awards</strong>: CoLM'24 Outstanding Paper
+                    <a href="https://arxiv.org/abs/2403.12958" target="_blank" rel="noopener noreferrer">(Reverse Engineering Knowledge Cutoffs)</a>; SIGIR’24 Best Paper Nominee
+                    <a href="https://arxiv.org/abs/2405.00982" target="_blank" rel="noopener noreferrer">(Evaluating Long-Form Report Generation)</a>; ECIR’25 Honorable Mention
+                    <a href="https://arxiv.org/abs/2501.19264" target="_blank" rel="noopener noreferrer">(Evaluating instructions in IR)</a>.
+                  </li>
+                </ul>
+                <a class="btn btn-sm btn-outline-danger" href="/assets/pdf/Orion_Weller_CV.pdf">CV (Sept 2025)</a>
+              </div>
+            </div>
+          </div>
           <div class="profile float-left">
 <figure>
 
@@ -118,15 +159,21 @@
           <div class="clearfix">
             <p>I’m a final-year PhD student at the <a href="https://www.clsp.jhu.edu" target="_blank" rel="noopener noreferrer">Center for Language and Speech Processing</a> at Johns Hopkins University, advised by <a href="https://www.cs.jhu.edu/~vandurme/" target="_blank" rel="noopener noreferrer">Benjamin Van Durme</a> and <a href="https://hltcoe.jhu.edu/researcher/dawn-lawrie/" target="_blank" rel="noopener noreferrer">Dawn Lawrie</a>. My research is graciously supported by a <a href="https://www.nsfgrfp.org/" target="_blank" rel="noopener noreferrer">NSF Graduate Research Fellowship</a>.</p>
 
-<p>My current research interests are situated between the LM and IR fields, where I work to improve how models find, understand, and generate information. These days my research interests fall in three main categories, although I can get distracted by other LM-based topics.</p>
+<p>My current research interests are situated between the LM and IR fields, where I work to improve how models find, understand, and synthesize information.  Lately I have focused on three areas:</p>
 
 <ul>
-  <li>Retrieval models: figuring out how to <a href="https://arxiv.org/abs/2403.15246" target="_blank" rel="noopener noreferrer">evaluate</a> <a href="https://arxiv.org/abs/2305.07614" target="_blank" rel="noopener noreferrer">them</a> <a href="https://arxiv.org/abs/2406.17186" target="_blank" rel="noopener noreferrer">comprehensively</a> and giving them new capabilites such as being <a href="https://arxiv.org/abs/2409.11136" target="_blank" rel="noopener noreferrer">instructable/prompted retrievers</a> or using <a href="https://arxiv.org/abs/2502.18418" target="_blank" rel="noopener noreferrer">test-time compute</a>.</li>
-  <li>Retrieval-Augmented Generation (RAG): working towards better <a href="https://arxiv.org/abs/2405.00982" target="_blank" rel="noopener noreferrer">RAG evaluations</a> and <a href="https://arxiv.org/abs/2212.10002" target="_blank" rel="noopener noreferrer">improving RAG performance (often through better retrieval)</a>.</li>
-  <li>Language model pre-training (analysis and modeling). On the analysis side, studying <a href="https://arxiv.org/abs/2403.12958" target="_blank" rel="noopener noreferrer">why LMs act they way they do</a> and using <a href="https://arxiv.org/abs/2305.13252" target="_blank" rel="noopener noreferrer">pre-training information to help LM generation</a>. On the modeling side improving encoder pre-training with <a href="https://arxiv.org/abs/2412.13663" target="_blank" rel="noopener noreferrer">ModernBERT</a>, comparing architecture differences with <a href="https://arxiv.org/abs/2507.11412" target="_blank" rel="noopener noreferrer">Ettin</a>, and improving multilingual models with <a href="https://github.com/JHU-CLSP/mmBERT" target="_blank" rel="noopener noreferrer">mmBERT</a>.</li>
+  <li>
+<strong>Agentic search / improved retrieval:</strong> pioneered instruction‑promptable retrievers (<a href="https://arxiv.org/abs/2409.11136" target="_blank" rel="noopener noreferrer">Promptriever</a>, ICLR’25) and created the first reasoning‑based rerankers for search (<a href="https://arxiv.org/abs/2502.18418" target="_blank" rel="noopener noreferrer">Rank1</a> / <a href="https://arxiv.org/abs/2505.14432" target="_blank" rel="noopener noreferrer">Rank‑K</a>).</li>
+  <li>
+<strong>Evaluation and measurement:</strong>
+<a href="https://arxiv.org/abs/2403.15246" target="_blank" rel="noopener noreferrer">FollowIR</a> (instruction‑following in IR; ECIR’25 Honorable Mention for multilingual version),
+<a href="https://arxiv.org/abs/2406.17186" target="_blank" rel="noopener noreferrer">CLERC</a> (legal case retrieval + generation), and
+<a href="https://arxiv.org/abs/2403.12958" target="_blank" rel="noopener noreferrer">Dated Data</a> (reverse engineering knowledge cutoffs in LMs; CoLM’24 Best Paper).</li>
+  <li>
+<strong>Pre‑training (decoders, encoders, multilingual):</strong> up to ~1B parameters and ~3T tokens; designing and training production‑quality encoders and decoders, including multilingual models, optimized for high‑throughput, low‑memory retrieval/agentic‑tool‑use. Examples: <a href="https://arxiv.org/abs/2412.13663" target="_blank" rel="noopener noreferrer">ModernBERT</a>, <a href="https://arxiv.org/abs/2507.11412" target="_blank" rel="noopener noreferrer">Ettin</a>, and <a href="https://github.com/JHU-CLSP/mmBERT" target="_blank" rel="noopener noreferrer">mmBERT</a>.</li>
 </ul>
 
-<p>Previously I graduated with my Bachelor’s degree from Brigham Young University in computer science and statistics, where I was advised by <a href="https://cs.byu.edu/faculty/faculty-directory/kevin-seppi/" target="_blank" rel="noopener noreferrer">Kevin Seppi</a> and <a href="https://cs.byu.edu/faculty/faculty-directory/quinn-snell/" target="_blank" rel="noopener noreferrer">Quinn Snell</a>.</p>
+<!-- Previously I graduated with my Bachelor's degree from Brigham Young University in computer science and statistics, where I was advised by [Kevin Seppi](https://cs.byu.edu/faculty/faculty-directory/kevin-seppi/) and [Quinn Snell](https://cs.byu.edu/faculty/faculty-directory/quinn-snell/). -->
 
 <p>For Fall 2025 I am currently interning at the FAIR language team at Meta’s Superintelligence Lab with <a href="https://xilunchen.com/" target="_blank" rel="noopener noreferrer">Xilun Chen</a> and <a href="https://scottyih.org/" target="_blank" rel="noopener noreferrer">Scott Yih</a>. In the past, I’ve been lucky to intern from amazing mentors at Google Deepmind, Samaya AI, AI2, and Apple.</p>
 
@@ -137,19 +184,13 @@
 
           </div>
 
-          <!-- News -->          
-          <div class="news">
-            <!-- <h2>news</h2> -->
-            <!-- <p>No news so far...</p> --> 
-          </div>
-
+          
           
           <!-- Social -->
           <div class="social">
             <div class="contact-icons">
             <div class="social">
   <span class="contacticon center">
-    <a href="https://www.semanticscholar.org/author/Orion-Weller/47433471" target="_blank" title="Semantic Scholar" rel="noopener noreferrer"><i class="ai ai-semantic-scholar"></i></a>
     
     <a href="https://scholar.google.com/citations?user=SYYd4iAAAAAJ" target="_blank" title="Google Scholar" rel="noopener noreferrer"><i class="ai ai-google-scholar"></i></a>
     <a href="https://github.com/orionw" target="_blank" title="GitHub" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
@@ -175,6 +216,7 @@
         </article>
 
 </div>
+
     </div>
 
     <!-- Footer -->    
