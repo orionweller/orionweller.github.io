@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+export PATH="/opt/homebrew/opt/ruby@3.3/bin:/opt/homebrew/lib/ruby/gems/3.3.0/bin:$PATH"
+
 # clear out the previous info
 rm -rf _site/
 rm -rf orionweller.github.io/*
