@@ -77,7 +77,7 @@
       "authors": [
         {
           "author": "Orion Weller",
-          "authorURL": "orionweller.com",
+          "authorURL": "https://orionweller.com",
           "affiliations": [
             {
               "name": "Johns Hopkins University",
@@ -193,7 +193,7 @@
 <p>This blog post focuses on the question “who is reviewing?” Although I can’t answer this question for all ML venues, I can answer it for the Natural Language Processing (NLP) community which reliably publishes a list of reviewers in their proceedings. Through this, I can gather fine-grained information for <em>how many times</em> individuals are reviewing compared to <em>how many papers</em> they publish.</p>
 
 <h2 id="data">Data</h2>
-<p>I scraped all PDF proceedings from *CL conferences from the <a href="https://aclanthology.org/" target="_blank" rel="noopener noreferrer">ACL Anthology</a> website. Each proceedings contains a list of reviewers who reviewed at the conference. Note: this is <strong>not the number of papers</strong> they reviewed, <strong>only whether they reviewed/AC’d/SAC’d at all</strong> for *CL conference**.</p>
+<p>I scraped all PDF proceedings from *CL conferences from the <a href="https://aclanthology.org/" target="_blank" rel="noopener noreferrer">ACL Anthology</a> website. Each proceedings contains a list of reviewers who reviewed at the conference. Note: this is <strong>not the number of papers</strong> they reviewed, <strong>only whether they reviewed/AC’d/SAC’d at all for a *CL conference</strong>.</p>
 
 <figure>
     <figure>
@@ -222,10 +222,10 @@
 <p>⚠️⚠️⚠️</p>
 <ul>
   <li>This data <strong>only includes reviewing and publications at *CL venues</strong>. It is possible (and likely) that people are also reviewing for ML/Speech/Vision conferences. However, I think it reasonable to expect everyone who publishes at *CL venues to also provide service for the NLP community so I don’t think this provides an excuse not to review.</li>
-  <li>There are many types of academic service (PCs, ACL board, etc.). It is non-trivial to decide a weighting for these, thus I simply count them equally – but clearly the nature of the service is quite different. However, since the number of people who fill these extremely high world-load positions is small it has little impact on the overall analysis (and none of them were annotated in the analysis section).</li>
+  <li>There are many types of academic service (PCs, ACL board, etc.). It is non-trivial to decide a weighting for these, thus I simply count them equally – but clearly the nature of the service is quite different. However, since the number of people who fill these extremely high workload positions is small it has little impact on the overall analysis (and none of them were annotated in the analysis section).</li>
   <li>The data only contains the number of <strong>times</strong> someone has reviewed. Thus, someone could have taken on a lighter load and have been counted equally high. However, the number of papers reviewed is not public and overall, I think this is a relatively minor issue.</li>
   <li>This data also doesn’t capture some forms of service, such as people who sub-review.</li>
-  <li>This data <strong>does</strong> capture SAC/AC/etc and I will refer them as “reviewers” even though their job description is different. Thus when I talked about “reviewing” remember that means reviewing/AC’ing/SAC’ing etc.</li>
+  <li>This data <strong>does</strong> capture SAC/AC/etc and I will refer to them as “reviewers” even though their job description is different. Thus when I talked about “reviewing” remember that means reviewing/AC’ing/SAC’ing etc.</li>
 </ul>
 
 <h3 id="data-quality">Data Quality</h3>
@@ -252,7 +252,7 @@
     <figcaption>An example of what the automated extraction did to the reviewer list</figcaption>
 </figure>
 
-<p>This process is potentially noisy, so I examined 50 different <code class="language-plaintext highlighter-rouge">GPT-3.5-turbo</code> based extractions. In 49 cases it was correct – however, in one case the last name was hyphenated when it should have not been. However, none of the manually annotated names that I annotated had hypens so this would only impact the overall statistics section.</p>
+<p>This process is potentially noisy, so I examined 50 different <code class="language-plaintext highlighter-rouge">GPT-3.5-turbo</code> based extractions. In 49 cases it was correct – however, in one case the last name was hyphenated when it should have not been. However, none of the manually annotated names that I annotated had hyphens so this would only impact the overall statistics section.</p>
 
 <p>The other source of noise is the ACL Anthology name matching. I checked 10 names and they all seemed correct, but it is possible there are other errors I missed – if your name doesn’t match up on the ACL Anthology please contact them!</p>
 
@@ -304,7 +304,7 @@
     </tr>
     <tr>
       <td style="text-align: center">Pronouns</td>
-      <td>He/Him    <br> Her/She</td>
+      <td>He/Him    <br> She/Her</td>
       <td style="text-align: center">22 <br> 3</td>
     </tr>
     <tr>
@@ -347,7 +347,7 @@
     </tr>
     <tr>
       <td style="text-align: center">Pronouns</td>
-      <td>He/Him    <br> Her/She</td>
+      <td>He/Him    <br> She/Her</td>
       <td style="text-align: center">19 <br> 6</td>
     </tr>
     <tr>
@@ -415,7 +415,7 @@
 
 <p>A relatively service-friendly ratio might be something like 5 publications to one time reviewing/AC/SAC’ing (given that reviewers are typically asked to review five papers per conference and that it is the 85th percentile).</p>
 
-<p>On one hand, reviewing/AC/SAC’ing once per every 5 papers becomes difficult for very senior researchers, who publish lots of papers! On the other hand, our community needs senior reviewers/AC/SAC’ing along with the less experienced reviewers (especially for the AC’s and SAC’s), so researchers who publish many papers without reviewing as much leaves the community bereft of their wisdom and forces more and more junior people to take on these roles.</p>
+<p>On one hand, reviewing/AC/SAC’ing once per every 5 papers becomes difficult for very senior researchers, who publish lots of papers! On the other hand, our community needs senior reviewers/ACs/SACs along with the less experienced reviewers (especially for the ACs and SACs), so researchers who publish many papers without reviewing as much leaves the community bereft of their wisdom and forces more and more junior people to take on these roles.</p>
 
 <h4 id="statistics-of-published-and-reviewing-authors">Statistics of Published and Reviewing Authors</h4>
 
@@ -437,7 +437,7 @@
     </tr>
     <tr>
       <td style="text-align: center">Pronouns</td>
-      <td>He/Him    <br> Her/She</td>
+      <td>He/Him    <br> She/Her</td>
       <td style="text-align: center">25 <br> 0</td>
     </tr>
     <tr>
@@ -486,7 +486,7 @@
     </tr>
     <tr>
       <td style="text-align: center">Pronouns</td>
-      <td>He/Him    <br> Her/She</td>
+      <td>He/Him    <br> She/Her</td>
       <td style="text-align: center">31 <br> 7</td>
     </tr>
     <tr>
@@ -587,7 +587,7 @@
   </tbody>
 </table>
 
-<p>We see that those post-PhD but less than 7 years after review/AC/SAC the most. Senior researchers review/AC/SAC the least.</p>
+<p>We see that those post-PhD but less than 7 years after graduation review/AC/SAC the most. Senior researchers review/AC/SAC the least.</p>
 
 <table>
   <thead>
@@ -684,7 +684,7 @@
 <p>Currently not - I don’t want prominent members of the community to dislike me and deny me opportunities for jobs! Perhaps post-PhD (feel free to send me job offers ;)).</p>
 
 <blockquote>
-  <p>Can you tell me what my (or my friends) Papers Per Reviewing Time number is?</p>
+  <p>Can you tell me what my (or my friends’) Papers Per Reviewing Time number is?</p>
 </blockquote>
 
 <p>Sure, send me an email to get yours (not your friends). But since you’ve done your own reviewing, feel free to compute your Papers Per Reviewing Time using those numbers!</p>
@@ -692,7 +692,7 @@
 <h2 id="acknowledgments">Acknowledgments</h2>
 <p>I’d like to thank Luca Soldaini and Kyle Lo who helped inspire this project and provided useful feedback. I’d also like to thank Marc Marone, Nathaniel Weir, Aleem Khan, and Michael Saxon for their advice on data processing and proofreading.</p>
 
-<h2 id="bibtext">BibText</h2>
+<h2 id="bibtex">BibTeX</h2>
 <p>If you found this blogpost useful and would like to cite it, you can cite it as:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@misc{weller2024reviewing,
       title={Who's Reviewing for Natural Language Processing Conferences?}, 
